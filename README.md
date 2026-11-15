@@ -1,4 +1,4 @@
-# Pocket LED 1.5.1 · 汉化版 + 熄屏关灯
+# Pocket LED 1.5.2 · 汉化版 + 熄屏关灯
 
 把西班牙语的安卓掌机电池指示灯工具 **Pocket LED** 汉化为简体中文，并在汉化基础上新增一个原版没有的功能：
 **熄屏 / 休眠时自动关闭指示灯**。
@@ -6,25 +6,25 @@
 > 上游：[Ninoh-FOX/led-control](https://github.com/Ninoh-FOX/led-control) `v1.5`（包名 `com.pocketblock.led`，targetSdk 31，minSdk 26 → Android 8.0+）
 > 本仓库是**非官方**汉化，与原作者无关，不含原作者源码。
 
-**当前版本：1.5.1**（`versionName=1.5.1` / `versionCode=7`）——版本号已与上游 `1.5 / 6` 区分开，
+**当前版本：1.5.2**（`versionName=1.5.2` / `versionCode=8`）——版本号已与上游 `1.5 / 6` 区分开，
 装过一次旧版的话可以直接覆盖升级。更新内容见 [CHANGELOG.md](CHANGELOG.md)。
 
 ## 下载
 
 | 文件 | 大小 | SHA-256 |
 |---|---|---|
-| [PocketLED-1.5.1-zh.apk](PocketLED-1.5.1-zh.apk) | 14,522 字节 | `61CCD04BAF657A708E5827A53DD2947748C2A33F826FE085D1894607D5237DE3` |
+| [PocketLED-1.5.2-zh.apk](PocketLED-1.5.2-zh.apk) | 14,521 字节 | `E4C6609B7E5896826ADB96D36FC29C5EC8C257A615D00194BF0DFAC5108E8CE7` |
 
 也可以从 [Releases](../../releases/latest) 取同一份文件。
 
 ## 功能
 
 - 全界面中文化：开关、阈值、色块名、按钮、通知栏、状态提示
-- **新增开关「熄屏时关闭指示灯」**
+- **新增开关「息屏关闭指示灯」**
   - 打开：屏幕熄灭（含掌机休眠）后指示灯立刻熄灭，点亮屏幕后自动恢复原颜色 / 亮度 / 闪烁
   - 关闭：与原版一致，息屏也常亮
   - 设置持久化在 `SharedPreferences`（文件 `led`，键 `screenOff`）
-- 应用名、图标、包名、权限、组件均保持原样；**版本号改为 1.5.1 / 7**（唯一一处与原版不同的元数据）
+- 应用名、图标、包名、权限、组件均保持原样；**版本号改为 1.5.2 / 8**（唯一一处与原版不同的元数据）
 
 ## 截图
 
@@ -38,10 +38,10 @@
 
 ```bash
 adb uninstall com.pocketblock.led      # 只有从「原版」转过来才需要：签名不同，无法覆盖装
-adb install PocketLED-1.5.1-zh.apk
+adb install PocketLED-1.5.2-zh.apk
 ```
 
-- **从本仓库的旧版（1.5-zh）升级**：签名相同，直接 `adb install -r` 或点开新 APK 覆盖安装，
+- **从本仓库的旧版（1.5-zh / 1.5.1-zh）升级**：签名相同，直接 `adb install -r` 或点开新 APK 覆盖安装，
   亮度 / 配色 / 阈值设置都会保留。
 - **从上游原版转过来**：必须先卸载原版，卸载会清空它保存的设置。
 - 系统要求 Android 8.0（API 26）及以上；APK 使用 **APK Signature Scheme v2** 自签名（RSA-2048，自签证书）。
@@ -85,13 +85,13 @@ adb install PocketLED-1.5.1-zh.apk
 
 - 编码器与原文 **83/83 个方法逐字节一致**
 - `verify_apk.py` → `ALL CHECKS PASSED`（内容摘要重算、RSA 验签、zip CRC、arsc 对齐全部通过）
-- 真机（Android 12 / arm64）实测：覆盖安装、启动、切开关、息屏、亮屏恢复均正常
+- 真机（Android 12 / arm64）实测：覆盖安装后 `versionName=1.5.2` / `versionCode=8`，启动、切开关、息屏、亮屏恢复均正常
 - `AndroidManifest.xml` 的版本号改写做了往返测试：`1.5` → `1.5.1` → `1.5` 后与原文件**逐字节相同**
 
 ## 目录
 
 ```
-PocketLED-1.5.1-zh.apk   成品（汉化 + 熄屏关灯，1.5.1 / 7）
+PocketLED-1.5.2-zh.apk   成品（汉化 + 息屏关灯，1.5.2 / 8）
 CHANGELOG.md             版本更新记录
 docs/汉化说明.md          完整改动对照表、技术做法、踩坑记录
 screenshots/             真机截图

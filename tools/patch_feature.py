@@ -34,7 +34,7 @@ HND = 'Landroid/os/Handler;'
 RUN = 'Ljava/lang/Runnable;'
 LED = 'Lcom/pocketblock/led/Led;'
 
-TEXT_LABEL = '熄屏时关闭指示灯'
+TEXT_LABEL = '息屏关闭指示灯'
 KEY = 'screenOff'
 POWER = 'power'
 
