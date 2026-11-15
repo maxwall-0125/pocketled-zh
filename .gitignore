@@ -2,6 +2,12 @@
 build/
 build-pocketled/
 *.log
+__pycache__/
+
+# 签名材料，绝不入库
+key/
+*.pkcs8
+*.p12
 
 # 系统
 Thumbs.db
